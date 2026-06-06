@@ -270,6 +270,26 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing
 .founder .fphoto{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:12px;margin-bottom:18px;border:1px solid var(--line);filter:saturate(.95)}
 .founder{padding:18px 18px 26px}
 
+/* Hero 全幅背景照 */
+.hero.hero-photo{background:#0A0C11 url(img/hero-home.jpg) right center/cover no-repeat}
+.hero.hero-photo::before{background:linear-gradient(90deg,rgba(10,12,17,.96),rgba(10,12,17,.72) 46%,rgba(10,12,17,.30))}
+.hero.hero-photo .hero-grid{grid-template-columns:1fr;max-width:640px;margin-right:auto}
+.hero.hero-photo .hero-visual{display:none}
+@media(max-width:1024px){.hero.hero-photo::before{background:linear-gradient(0deg,rgba(10,12,17,.96),rgba(10,12,17,.6))}}
+
+/* 區塊背景照（含暗罩） */
+.photo-sec{background-size:cover;background-position:center;position:relative}
+.photo-sec::before{content:"";position:absolute;inset:0;background:rgba(10,12,17,.84)}
+.photo-sec>.container{position:relative;z-index:1}
+
+/* 支柱頭圖 */
+.pillar-img{height:260px;border-radius:14px;background-size:cover;background-position:center;
+  border:1px solid var(--line-soft);margin-bottom:34px;box-shadow:var(--shadow)}
+@media(max-width:600px){.pillar-img{height:170px;margin-bottom:24px}}
+
+/* 見證頭像 */
+.quote .who .qphoto{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--line);flex-shrink:0}
+
 /* 情境照全幅帶 */
 .scene-band{position:relative;min-height:440px;display:flex;align-items:flex-end;
   background-size:cover;background-position:center;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
