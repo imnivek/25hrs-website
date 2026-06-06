@@ -261,7 +261,77 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing
 .crumb{position:relative;color:var(--muted);font-size:.82rem;margin-bottom:18px;letter-spacing:1px}
 .crumb a:hover{color:var(--gold)}
 
+/* ============ 長文內容元件 ============ */
+.lead{max-width:820px;margin:0 auto 46px;text-align:center;color:var(--muted);font-size:1.12rem}
+.prose{max-width:840px;margin:0 auto}
+.prose p{color:var(--muted);margin-bottom:18px;font-size:1.02rem}
+.prose strong{color:var(--text);font-weight:700}
+.prose h3{font-size:1.5rem;margin:36px 0 14px}
+
+/* 模組卡（課綱用） */
+.modcard{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:30px 28px;transition:.3s;display:flex;gap:24px}
+.modcard:hover{border-color:var(--line);transform:translateY(-3px);box-shadow:var(--shadow)}
+.modcard .mno{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;min-width:64px}
+.modcard h3{font-size:1.3rem;margin-bottom:4px}
+.modcard .meta{color:var(--gold);font-size:.82rem;letter-spacing:1px;margin-bottom:14px}
+.modcard ul{list-style:none;margin-top:6px}
+.modcard ul li{color:var(--muted);font-size:.95rem;padding:5px 0 5px 22px;position:relative}
+.modcard ul li::before{content:"›";color:var(--gold);position:absolute;left:4px;top:4px;font-size:1.1rem}
+.modcard .takeaway{margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:.92rem;color:var(--text)}
+.modcard .takeaway b{color:var(--gold)}
+
+/* 雙欄清單（為誰設計 / 不適合） */
+.fortwo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fortwo .col{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:30px}
+.fortwo .col.no{opacity:.92}
+.fortwo h3{font-size:1.25rem;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.fortwo ul{list-style:none}
+.fortwo li{padding:9px 0 9px 28px;position:relative;color:var(--muted)}
+.fortwo .col.yes li::before{content:"✓";color:var(--gold);position:absolute;left:0;font-weight:700}
+.fortwo .col.no li::before{content:"✕";color:#7d8493;position:absolute;left:0;font-weight:700}
+
+/* 議程時間軸 */
+.agenda{max-width:760px;margin:0 auto}
+.agenda .row{display:flex;gap:22px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.agenda .t{font-family:var(--serif);color:var(--gold);font-weight:700;min-width:120px;font-size:1.05rem}
+.agenda .d b{display:block;margin-bottom:3px}
+.agenda .d span{color:var(--muted);font-size:.92rem}
+
+/* 資料表 */
+.dtable{width:100%;border-collapse:collapse;font-size:.95rem;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line-soft)}
+.dtable th,.dtable td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line-soft)}
+.dtable th{background:var(--panel-2);color:var(--text);font-weight:700;font-size:.9rem;letter-spacing:.5px}
+.dtable td{color:var(--muted)}
+.dtable tr:last-child td{border-bottom:none}
+.dtable td b,.dtable td strong{color:var(--gold)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* FAQ 手風琴 */
+.faq{max-width:840px;margin:0 auto}
+.faq details{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;margin-bottom:14px;overflow:hidden;transition:.3s}
+.faq details[open]{border-color:var(--line)}
+.faq summary{padding:22px 26px;cursor:pointer;font-weight:700;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:1.5rem;font-weight:400;transition:.3s;flex-shrink:0}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 26px 24px;color:var(--muted);font-size:.98rem;line-height:1.8}
+
+/* 數據亮點列 */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.kpi{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px;text-align:center}
+.kpi .v{font-family:var(--serif);font-size:2.4rem;color:var(--gold);font-weight:700;line-height:1}
+.kpi .k{color:var(--muted);margin-top:10px;font-size:.92rem}
+
 /* ============ RWD ============ */
+@media(max-width:760px){
+  .fortwo,.kpis{grid-template-columns:1fr}
+  .modcard{flex-direction:column;gap:10px;padding:26px 22px}
+  .modcard .mno{font-size:2rem}
+  .agenda .row{flex-direction:column;gap:6px}
+  .agenda .t{min-width:0}
+  .prose h3{font-size:1.3rem}
+}
+
 
 /* 中型螢幕（筆電 / 直式平板）*/
 @media(max-width:1024px){
