@@ -272,10 +272,19 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing
 
 /* Hero 全幅背景照 */
 .hero.hero-photo{background:#0A0C11 url(img/hero-home.jpg) right center/cover no-repeat}
-.hero.hero-photo::before{background:linear-gradient(90deg,rgba(10,12,17,.96),rgba(10,12,17,.72) 46%,rgba(10,12,17,.30))}
-.hero.hero-photo .hero-grid{grid-template-columns:1fr;max-width:640px;margin-right:auto}
+.hero.hero-photo::before{background:linear-gradient(90deg,rgba(10,12,17,.97),rgba(10,12,17,.80) 48%,rgba(10,12,17,.42))}
+.hero.hero-photo .hero-grid{grid-template-columns:1fr;text-align:left}
+.hero.hero-photo .hero-grid>div:first-child{max-width:680px}
 .hero.hero-photo .hero-visual{display:none}
-@media(max-width:1024px){.hero.hero-photo::before{background:linear-gradient(0deg,rgba(10,12,17,.96),rgba(10,12,17,.6))}}
+.hero.hero-photo .hero-cta{justify-content:flex-start}
+.hero.hero-photo .sub,.hero.hero-photo .mission{margin-left:0;margin-right:0}
+.hero.hero-photo h1{font-size:clamp(2.2rem,4vw,3.3rem);text-wrap:balance}
+.hero h1 .gold{white-space:nowrap}
+@media(max-width:1024px){
+  .hero.hero-photo{background-position:74% center}
+  .hero.hero-photo::before{background:linear-gradient(0deg,rgba(10,12,17,.95),rgba(10,12,17,.55) 70%,rgba(10,12,17,.7))}
+  .hero.hero-photo .hero-grid>div:first-child{max-width:none}
+}
 
 /* 區塊背景照（含暗罩） */
 .photo-sec{background-size:cover;background-position:center;position:relative}
