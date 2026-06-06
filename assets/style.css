@@ -208,8 +208,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing
 .plan ul li::before{content:"✓";color:var(--gold);position:absolute;left:0;font-weight:700}
 
 /* ============ CTA band ============ */
-.cta-band{background:
-  linear-gradient(135deg,rgba(200,162,76,.12),transparent),var(--bg-2);
+.cta-band{
+  background:linear-gradient(rgba(10,12,17,.62),rgba(10,12,17,.8)),url(img/banner-cta.jpg) center/cover,var(--bg-2);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;padding:90px 0}
 .cta-band h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 .cta-band p{color:var(--muted);max-width:560px;margin:0 auto 34px;font-size:1.05rem}
@@ -254,7 +254,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing
 .reveal.in{opacity:1;transform:none}
 
 /* ============ 頁面標題 banner ============ */
-.page-hero{padding:160px 0 70px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)}
+.page-hero{padding:160px 0 70px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft);background:#0A0C11 url(img/banner-pagehero.jpg) top center/cover no-repeat}
 .page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 0%,rgba(200,162,76,.14),transparent 70%)}
 .page-hero h1{font-size:clamp(2.4rem,5vw,3.6rem);position:relative}
 .page-hero p{color:var(--muted);max-width:620px;margin:18px auto 0;position:relative}
@@ -265,6 +265,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing
 .ico{width:24px;height:24px;color:var(--gold);display:inline-block;vertical-align:middle;flex-shrink:0}
 .ic .ico{width:27px;height:27px}
 .ci .ic .ico{width:22px;height:22px}
+
+/* 創辦人真實肖像 */
+.founder .fphoto{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:12px;margin-bottom:18px;border:1px solid var(--line);filter:saturate(.95)}
+.founder{padding:18px 18px 26px}
 
 /* 永動機飛輪 SVG */
 .flywheel-wrap{max-width:560px;margin:46px auto 0}
