@@ -270,6 +270,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing
 .founder .fphoto{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:12px;margin-bottom:18px;border:1px solid var(--line);filter:saturate(.95)}
 .founder{padding:18px 18px 26px}
 
+/* 情境照全幅帶 */
+.scene-band{position:relative;min-height:440px;display:flex;align-items:flex-end;
+  background-size:cover;background-position:center;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.scene-band::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(10,12,17,.92),rgba(10,12,17,.35) 55%,rgba(10,12,17,.55))}
+.scene-band .cap{position:relative;z-index:1;padding:40px 0;width:100%}
+.scene-band .cap .eyebrow{margin-bottom:10px}
+.scene-band .cap h3{font-size:clamp(1.5rem,3vw,2.2rem);max-width:680px}
+@media(max-width:600px){.scene-band{min-height:300px}}
+
 /* 永動機飛輪 SVG */
 .flywheel-wrap{max-width:560px;margin:46px auto 0}
 .flywheel-wrap svg{width:100%;height:auto;display:block}
