@@ -1,0 +1,730 @@
+/* ================================
+   25HRS CLUB PAGE
+   Luxury one-page membership design
+================================ */
+
+:root {
+  --club-bg: #090807;
+  --club-bg-2: #12100d;
+  --club-panel: rgba(255, 255, 255, 0.045);
+  --club-panel-strong: rgba(255, 255, 255, 0.075);
+  --club-line: rgba(212, 176, 102, 0.22);
+  --club-line-soft: rgba(255, 255, 255, 0.1);
+  --club-text: #f6efe2;
+  --club-muted: rgba(246, 239, 226, 0.68);
+  --club-muted-2: rgba(246, 239, 226, 0.48);
+  --club-gold: var(--gold, #d6b16a);
+  --club-gold-2: #f2dca2;
+  --club-brown: #2a1d13;
+  --club-radius: 28px;
+  --club-radius-sm: 18px;
+  --serif: "Cormorant Garamond", "Noto Serif TC", serif;
+  --sans: "Noto Sans TC", system-ui, sans-serif;
+}
+
+body.club-page {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(214, 177, 106, 0.12), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(125, 77, 36, 0.16), transparent 36%),
+    var(--club-bg);
+  color: var(--club-text);
+}
+
+.club-page .nav .link.club-active {
+  color: var(--club-gold);
+}
+
+.club-section {
+  position: relative;
+  padding: 112px 0;
+  overflow: hidden;
+}
+
+.club-section-sm {
+  padding: 76px 0;
+}
+
+.club-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.club-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: var(--club-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.club-eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--club-gold));
+}
+
+.club-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.35rem, 5vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--club-text);
+}
+
+.club-title .gold,
+.club-gold {
+  color: var(--club-gold);
+}
+
+.club-sub {
+  max-width: 720px;
+  margin-top: 28px;
+  color: var(--club-muted);
+  font-size: 1.08rem;
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+.club-center {
+  text-align: center;
+}
+
+.club-center .club-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.club-section-head {
+  margin-bottom: 52px;
+}
+
+.club-section-head .club-title {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.club-hero {
+  min-height: 840px;
+  display: flex;
+  align-items: center;
+  padding: 132px 0 86px;
+  border-bottom: 1px solid var(--club-line-soft);
+}
+
+.club-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(9, 8, 7, 0.95) 0%, rgba(9, 8, 7, 0.72) 46%, rgba(9, 8, 7, 0.22) 100%),
+    radial-gradient(circle at 70% 24%, rgba(214, 177, 106, 0.18), transparent 28%);
+  z-index: 0;
+}
+
+.club-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.86fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.club-hero-copy {
+  max-width: 720px;
+}
+
+.club-hero .club-title {
+  font-size: clamp(3rem, 6.4vw, 6.85rem);
+}
+
+.club-hero .club-sub {
+  font-size: 1.12rem;
+}
+
+.club-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.club-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 34px;
+}
+
+.club-meta-row span {
+  padding: 10px 14px;
+  border: 1px solid var(--club-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--club-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.club-hero-visual {
+  position: relative;
+  min-height: 620px;
+}
+
+.club-hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 32px -18px -22px 42px;
+  border: 1px solid var(--club-line);
+  border-radius: 34px;
+  z-index: 0;
+}
+
+.club-hero-visual img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  border-radius: 34px;
+  filter: saturate(0.78) contrast(1.05);
+  box-shadow: 0 36px 90px rgba(0, 0, 0, 0.48);
+}
+
+.club-hero-badge {
+  position: absolute;
+  z-index: 2;
+  left: -34px;
+  bottom: 42px;
+  width: 178px;
+  height: 178px;
+  border: 1px solid var(--club-line);
+  border-radius: 50%;
+  background: rgba(13, 10, 8, 0.78);
+  backdrop-filter: blur(18px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--club-text);
+}
+
+.club-hero-badge strong {
+  display: block;
+  font-family: var(--serif);
+  color: var(--club-gold);
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.club-hero-badge span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--club-muted);
+}
+
+.club-story {
+  background:
+    linear-gradient(rgba(9, 8, 7, 0.78), rgba(9, 8, 7, 0.92)),
+    var(--story-bg, url("assets/img/club-room.jpg")) center / cover;
+}
+
+.club-story-box {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 72px 56px;
+  border: 1px solid var(--club-line);
+  border-radius: var(--club-radius);
+  background: rgba(9, 8, 7, 0.58);
+  backdrop-filter: blur(18px);
+  text-align: center;
+}
+
+.club-story-box .club-title {
+  font-size: clamp(2.25rem, 4.5vw, 4.2rem);
+}
+
+.club-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.club-audience-card {
+  min-height: 320px;
+  padding: 28px;
+  border: 1px solid var(--club-line-soft);
+  border-radius: var(--club-radius-sm);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.068), rgba(255, 255, 255, 0.025));
+  transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+}
+
+.club-audience-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--club-line);
+  background:
+    linear-gradient(180deg, rgba(214, 177, 106, 0.12), rgba(255, 255, 255, 0.025));
+}
+
+.club-audience-card .num {
+  color: var(--club-gold);
+  font-family: var(--serif);
+  font-size: 2.1rem;
+}
+
+.club-audience-card h3 {
+  margin: 46px 0 14px;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  color: var(--club-text);
+}
+
+.club-audience-card p {
+  margin: 0;
+  color: var(--club-muted);
+  line-height: 1.8;
+}
+
+.club-membership {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(214, 177, 106, 0.1), transparent 30%),
+    var(--club-bg-2);
+}
+
+.club-membership-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.club-price-card {
+  position: relative;
+  padding: 44px;
+  border: 1px solid var(--club-line);
+  border-radius: var(--club-radius);
+  background:
+    linear-gradient(145deg, rgba(214, 177, 106, 0.16), rgba(255, 255, 255, 0.035)),
+    rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.club-price-card::after {
+  content: "25HRS";
+  position: absolute;
+  right: -22px;
+  bottom: -22px;
+  font-family: var(--serif);
+  font-size: 8rem;
+  font-weight: 700;
+  color: rgba(214, 177, 106, 0.055);
+  letter-spacing: -0.08em;
+}
+
+.club-price-card .label {
+  color: var(--club-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.club-price-card .price {
+  margin-top: 34px;
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 6vw, 5.8rem);
+  color: var(--club-gold);
+  line-height: 0.92;
+}
+
+.club-price-card .price span {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--club-muted);
+  letter-spacing: 0.12em;
+}
+
+.club-benefits {
+  padding: 38px;
+  border: 1px solid var(--club-line-soft);
+  border-radius: var(--club-radius);
+  background: var(--club-panel);
+}
+
+.club-benefit {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--club-line-soft);
+}
+
+.club-benefit:last-child {
+  border-bottom: 0;
+}
+
+.club-benefit b {
+  color: var(--club-gold);
+  font-size: 0.92rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.club-benefit span {
+  color: var(--club-muted);
+  line-height: 1.75;
+}
+
+.club-track-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.club-track-card {
+  padding: 44px;
+  border-radius: var(--club-radius);
+  border: 1px solid var(--club-line-soft);
+  background: linear-gradient(180deg, rgba(255,255,255,0.062), rgba(255,255,255,0.024));
+}
+
+.club-track-card h3 {
+  margin: 0 0 16px;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.club-track-card p {
+  color: var(--club-muted);
+  line-height: 1.9;
+}
+
+.club-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.club-tag-list span {
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(214, 177, 106, 0.1);
+  border: 1px solid var(--club-line);
+  color: var(--club-muted);
+  font-size: 0.86rem;
+}
+
+.club-scenes {
+  background: var(--club-bg-2);
+}
+
+.club-scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.club-scene-card {
+  position: relative;
+  min-height: 430px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--club-line-soft);
+  background: #17120e;
+}
+
+.club-scene-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) brightness(0.72);
+  transform: scale(1.02);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.club-scene-card:hover img {
+  transform: scale(1.08);
+  filter: saturate(0.82) brightness(0.82);
+}
+
+.club-scene-content {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 34px;
+  background: linear-gradient(180deg, transparent, rgba(9,8,7,0.94) 62%);
+}
+
+.club-scene-content .en {
+  color: var(--club-gold);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.club-scene-content h3 {
+  margin: 10px 0 12px;
+  font-family: var(--serif);
+  font-size: 1.78rem;
+}
+
+.club-scene-content p {
+  margin: 0;
+  color: var(--club-muted);
+  line-height: 1.75;
+}
+
+.club-year-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.club-quarter {
+  padding: 30px;
+  border: 1px solid var(--club-line-soft);
+  border-radius: var(--club-radius-sm);
+  background: var(--club-panel);
+}
+
+.club-quarter .q {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--club-gold);
+}
+
+.club-quarter p {
+  margin: 18px 0 0;
+  color: var(--club-muted);
+  line-height: 1.8;
+}
+
+.club-application {
+  background:
+    linear-gradient(180deg, rgba(9,8,7,0.94), rgba(9,8,7,0.82)),
+    url("assets/img/club-founder-cta.jpg") center / cover;
+}
+
+.club-process {
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border: 1px solid var(--club-line);
+  border-radius: var(--club-radius);
+  overflow: hidden;
+  background: var(--club-line);
+}
+
+.club-process-card {
+  counter-increment: step;
+  min-height: 260px;
+  padding: 34px;
+  background: rgba(9, 8, 7, 0.88);
+}
+
+.club-process-card::before {
+  content: "0" counter(step);
+  display: block;
+  margin-bottom: 46px;
+  color: var(--club-gold);
+  font-family: var(--serif);
+  font-size: 2.35rem;
+}
+
+.club-process-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+}
+
+.club-process-card p {
+  margin: 0;
+  color: var(--club-muted);
+  line-height: 1.75;
+}
+
+.club-final-cta {
+  padding: 112px 0;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(214, 177, 106, 0.16), transparent 38%),
+    var(--club-bg);
+}
+
+.club-final-box {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: 64px 44px;
+  border: 1px solid var(--club-line);
+  border-radius: 34px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.072), rgba(255,255,255,0.028));
+}
+
+.club-final-box .club-title {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+}
+
+.club-note {
+  margin-top: 24px;
+  color: var(--club-muted-2);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+/* 會員身份卡片帶人像（在企劃 CSS 之外的小幅增補） */
+.club-audience-card.has-photo {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.club-audience-card.has-photo img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  filter: saturate(0.78) brightness(0.82);
+  border-bottom: 1px solid var(--club-line-soft);
+}
+
+.club-audience-card.has-photo .ac-body {
+  padding: 24px 26px 30px;
+}
+
+.club-audience-card.has-photo .num {
+  font-size: 1.4rem;
+}
+
+.club-audience-card.has-photo h3 {
+  margin: 10px 0 12px;
+  font-size: 1.45rem;
+}
+
+@media (max-width: 980px) {
+  .club-section {
+    padding: 82px 0;
+  }
+
+  .club-hero {
+    min-height: auto;
+    padding-top: 112px;
+  }
+
+  .club-hero-grid,
+  .club-membership-grid,
+  .club-track-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .club-hero-visual {
+    min-height: auto;
+  }
+
+  .club-hero-visual img {
+    height: 480px;
+  }
+
+  .club-hero-badge {
+    left: 18px;
+    bottom: 24px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .club-audience-grid,
+  .club-scenes-grid,
+  .club-year-grid,
+  .club-process {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .club-process {
+    gap: 1px;
+  }
+}
+
+@media (max-width: 640px) {
+  .club-container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .club-hero {
+    padding: 104px 0 64px;
+  }
+
+  .club-hero .club-title {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
+  }
+
+  .club-sub {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .club-hero-actions {
+    flex-direction: column;
+  }
+
+  .club-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .club-hero-visual img {
+    height: 380px;
+    border-radius: 24px;
+  }
+
+  .club-hero-visual::before {
+    inset: 20px -8px -12px 20px;
+    border-radius: 24px;
+  }
+
+  .club-story-box {
+    padding: 46px 24px;
+  }
+
+  .club-audience-grid,
+  .club-scenes-grid,
+  .club-year-grid,
+  .club-process {
+    grid-template-columns: 1fr;
+  }
+
+  .club-benefit {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .club-price-card,
+  .club-benefits,
+  .club-track-card,
+  .club-final-box {
+    padding: 30px 24px;
+  }
+
+  .club-scene-card {
+    min-height: 390px;
+  }
+
+  .club-process-card {
+    min-height: auto;
+  }
+
+  .club-process-card::before {
+    margin-bottom: 28px;
+  }
+}
