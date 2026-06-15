@@ -1,5 +1,5 @@
-/* 25HRS 官網 POC｜互動腳本
-   功能：頁首滾動變色、手機選單、進場動畫、表單示意送出 */
+/* 25HRS 官網｜互動腳本
+   功能：頁首滾動變色、手機選單、進場動畫、聯絡表單送出 */
 (function () {
   "use strict";
 
@@ -38,16 +38,43 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // 表單示意送出（POC：不串接後端，僅前端提示）
-  document.querySelectorAll("form[data-demo]").forEach(function (form) {
+  // 聯絡表單：透過 FormSubmit 以 AJAX 寄到指定信箱（免後端、免註冊）
+  document.querySelectorAll("form[data-contact-form]").forEach(function (form) {
+    var endpoint = "https://formsubmit.co/ajax/ainstein.service@gmail.com";
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var box = form.querySelector(".form-msg");
-      if (box) {
-        box.textContent = "已收到您的資料（POC 示意，尚未串接後端）。專人將於 1 個工作日內與您聯繫。";
-        box.style.color = "var(--gold)";
-      }
-      form.reset();
+      var btn = form.querySelector("button[type=submit]");
+      var data = {};
+      new FormData(form).forEach(function (value, key) { data[key] = value; });
+      data._subject = "25HRS 官網表單：" + (data.intent || data.name || "新訊息");
+      data._template = "table";
+      if (btn) { btn.disabled = true; }
+      if (box) { box.textContent = "送出中…"; box.style.color = "#9aa0ab"; }
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (res) {
+          if (res && (res.success === true || res.success === "true")) {
+            if (box) {
+              box.textContent = "已收到您的資料，專人將於 1 個工作日內與您聯繫。";
+              box.style.color = "var(--gold)";
+            }
+            form.reset();
+          } else {
+            throw new Error("submit failed");
+          }
+        })
+        .catch(function () {
+          if (box) {
+            box.textContent = "送出失敗，請改用 LINE@ 與我們聯繫，或稍後再試一次。";
+            box.style.color = "#e06a6a";
+          }
+        })
+        .then(function () { if (btn) { btn.disabled = false; } });
     });
   });
 })();
