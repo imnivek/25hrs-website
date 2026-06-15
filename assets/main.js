@@ -40,7 +40,7 @@
 
   // 聯絡表單：透過 FormSubmit 以 AJAX 寄到指定信箱（免後端、免註冊）
   document.querySelectorAll("form[data-contact-form]").forEach(function (form) {
-    var endpoint = "https://formsubmit.co/ajax/ainstein.service@gmail.com";
+    var endpoint = "https://formsubmit.co/ajax/25hrs.service@gmail.com";
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var box = form.querySelector(".form-msg");
