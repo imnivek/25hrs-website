@@ -201,8 +201,8 @@ body.club-page {
   z-index: 2;
   left: -34px;
   bottom: 42px;
-  width: 168px;
-  height: 168px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--club-bg);
@@ -718,12 +718,12 @@ body.club-page {
   }
 
   .club-hero-badge {
-    left: 14px;
+    left: 16px;
     right: auto;
     transform: none;
-    bottom: 14px;
-    width: 92px;
-    height: 92px;
+    bottom: 16px;
+    width: 118px;
+    height: 118px;
   }
 
   .club-hero-visual::before {
