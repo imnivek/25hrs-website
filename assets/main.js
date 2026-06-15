@@ -40,7 +40,8 @@
 
   // 聯絡表單：透過 FormSubmit 以 AJAX 寄到指定信箱（免後端、免註冊）
   document.querySelectorAll("form[data-contact-form]").forEach(function (form) {
-    var endpoint = "https://formsubmit.co/ajax/25hrs.service@gmail.com";
+    // FormSubmit 專屬代碼（對應信箱 25hrs.service@gmail.com，用代碼可避免原始碼暴露信箱）
+    var endpoint = "https://formsubmit.co/ajax/5726935f08f932928101e7862bb093c5";
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var box = form.querySelector(".form-msg");
