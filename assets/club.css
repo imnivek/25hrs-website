@@ -718,12 +718,7 @@ body.club-page {
   }
 
   .club-hero-badge {
-    left: 16px;
-    right: auto;
-    transform: none;
-    bottom: 16px;
-    width: 118px;
-    height: 118px;
+    display: none;
   }
 
   .club-hero-visual::before {
