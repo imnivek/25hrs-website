@@ -212,7 +212,7 @@ body.club-page {
 .club-hero-badge img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .club-hero-badge strong {
@@ -718,12 +718,12 @@ body.club-page {
   }
 
   .club-hero-badge {
-    left: 50%;
+    left: 14px;
     right: auto;
-    transform: translateX(-50%);
+    transform: none;
     bottom: 14px;
-    width: 112px;
-    height: 112px;
+    width: 92px;
+    height: 92px;
   }
 
   .club-hero-visual::before {
