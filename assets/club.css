@@ -247,10 +247,15 @@ body.club-page {
 
 @media (max-width: 640px) {
   .club-banner {
-    padding: 4px 0 44px;
+    padding: 0;
+  }
+  .club-banner .club-container {
+    width: 100%;
   }
   .club-banner img {
-    border-radius: 12px;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
   }
 }
 
@@ -710,6 +715,15 @@ body.club-page {
   .club-hero-visual img {
     height: 380px;
     border-radius: 24px;
+  }
+
+  .club-hero-badge {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 14px;
+    width: 112px;
+    height: 112px;
   }
 
   .club-hero-visual::before {
